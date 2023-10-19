@@ -1,0 +1,124 @@
+body {
+  align-items: center;
+  background-color: hsl(225, 100%, 94%);
+  display: flex;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  justify-content: center;
+  height: 100vh;
+}
+
+.card {
+  background-color: hsl(225, 100%, 98%);
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  max-width: 450px;
+}
+.card .capa {
+  border-radius: 18px 18px 0 0;
+}
+.card .card__resumo {
+  text-align: center;
+}
+.card .card__resumo h2 {
+  color: hsl(223, 47%, 23%);
+  font-size: 32px;
+  font-weight: 900;
+  padding: 40px;
+}
+.card .card__resumo p {
+  color: hsl(224, 23%, 55%);
+  padding: 0 45px;
+  line-height: 1.5rem;
+}
+.card .card__plano {
+  align-items: center;
+  background-color: rgba(224, 232, 255, 0.5);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px 60px;
+  padding: 20px;
+}
+.card .card__plano .card__plano__precos {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0 auto 0 16px;
+}
+.card .card__plano .card__plano__precos h3 {
+  color: hsl(223, 47%, 23%);
+  font-weight: 900;
+}
+.card .card__plano .card__plano__precos span {
+  color: hsl(224, 23%, 55%);
+}
+.card .card__plano button {
+  background: transparent;
+  border: none;
+  color: hsl(245, 75%, 52%);
+  cursor: pointer;
+  font-family: "Red Hat Display", sans-serif;
+  font-weight: 700;
+  text-decoration: underline;
+}
+.card .card__plano button:hover {
+  color: hsl(245, 75%, 65%);
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+.card .botao-pagamento {
+  background: hsl(245, 75%, 52%);
+  border: none;
+  border-radius: 12px;
+  color: hsl(225, 100%, 98%);
+  cursor: pointer;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  margin: 0 60px 20px 60px;
+  padding: 15px 0;
+}
+.card .botao-pagamento:hover {
+  background: hsl(245, 75%, 65%);
+  color: hsl(225, 100%, 98%);
+  transition: 0.3s;
+}
+.card .botao-cancelar {
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  color: hsl(224, 23%, 55%);
+  cursor: pointer;
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  margin: 0 60px 20px 60px;
+  padding: 15px 0;
+}
+.card .botao-cancelar:hover {
+  background: transparent;
+  color: hsl(223, 47%, 23%);
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 375px) {
+  .card {
+    max-width: 90%;
+  }
+  .card .card__resumo h2 {
+    font-size: 26px;
+    padding: 30px;
+  }
+  .card .card__plano {
+    margin: 20px 30px;
+  }
+  .card .botao-pagamento {
+    margin: 10px 30px;
+  }
+  .card .botao-cancelar {
+    margin: 10px 30px;
+  }
+}/*# sourceMappingURL=style.css.map */

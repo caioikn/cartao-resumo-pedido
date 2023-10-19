@@ -1,0 +1,150 @@
+$fonte-principal: 'Red Hat Display', sans-serif;
+
+$fundo-principal: hsl(225, 100%, 94%);
+$fundo-card: hsl(225, 100%, 98%);
+$fundo-plano: hsl(225, 100%, 94%);
+
+$cor-titulo: hsl(223, 47%, 23%);
+$cor-texto: hsl(224, 23%, 55%);
+$cor-botao: hsl(245, 75%, 52%);
+$cor-hover: hsl(245, 75%, 65%);
+
+@mixin estilo-botao($background, $fonte, $background-hover, $fonte-hover) {
+    background: $background;
+    border: none;
+    border-radius: 12px;
+    color: $fonte;
+    cursor: pointer;
+    font-family: $fonte-principal;
+    font-size: 16px;
+    font-weight: 900;
+    margin: 0 60px 20px 60px;
+    padding: 15px 0;
+
+    &:hover {
+        background: $background-hover;
+        color: $fonte-hover;
+        transition: 0.3s;
+    }
+}
+
+body {
+    align-items: center;
+    background-color: $fundo-principal;
+    display: flex;
+    font-family: $fonte-principal;
+    font-size: 16px;
+    font-weight: 500;
+    justify-content: center;
+    height: 100vh;
+}
+
+.card {
+    background-color: $fundo-card;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+
+    .capa {
+        border-radius: 18px 18px 0 0;
+    }
+
+    .card__resumo {
+        text-align: center;
+
+        h2 {
+            color: $cor-titulo;
+            font-size: 32px;
+            font-weight: 900;
+            padding: 40px;
+        }
+
+        p {
+            color: $cor-texto;
+            padding: 0 45px;
+            line-height: 1.5rem;
+        }
+    }
+
+    .card__plano {
+        align-items: center;
+        background-color: rgba($color: $fundo-plano, $alpha: 0.5);
+        border-radius: 12px;
+        display: flex;
+        justify-content: space-evenly;
+        margin: 20px 60px;
+        padding: 20px;
+
+        .card__plano__precos {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin: 0 auto 0 16px;
+
+            h3 {
+                color: $cor-titulo;
+                font-weight: 900;
+            }
+
+            span {
+                color: $cor-texto;
+            }
+        }
+
+        button {
+            background: transparent;
+            border: none;
+            color: $cor-botao;
+            cursor: pointer;
+            font-family: $fonte-principal;
+            font-weight: 700;
+            text-decoration: underline;
+
+            &:hover {
+                color: $cor-hover;
+                text-decoration: none;
+                transition: 0.3s ease-in-out;
+            }
+        }
+    }
+
+    .botao-pagamento {
+        @include estilo-botao($cor-botao, $fundo-card, $cor-hover, $fundo-card);
+    }
+
+    .botao-cancelar {
+        @include estilo-botao(transparent, $cor-texto, transparent, $cor-titulo);
+    }
+}
+
+// Responsividade
+
+@media screen and (max-width: 375px) {
+    @mixin estilo-botao {
+        margin: 10px 30px;
+    }
+
+    .card {
+        max-width: 90%;
+
+        .card__resumo {
+            h2 {
+                font-size: 26px;
+                padding: 30px;
+            }
+        }
+
+        .card__plano {
+            margin: 20px 30px;
+        }
+
+        .botao-pagamento {
+            @include estilo-botao();
+        }
+
+        .botao-cancelar {
+            @include estilo-botao();
+        }
+    }
+}
